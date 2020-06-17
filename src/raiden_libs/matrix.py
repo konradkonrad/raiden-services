@@ -202,6 +202,7 @@ class MatrixListener(gevent.Greenlet):
 
     def _start_client(self) -> None:
         try:
+            self.user_manager.set_ignore_display_name_failures()
             self.user_manager.start()
 
             login(
